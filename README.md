@@ -1,2 +1,14 @@
-# dp2
-Design patterns II.
+# Design patterns II.
+
+## Overview
+
+This repo is an example for my second Design Pattern workshop on the [AionHill](http://aionhill.com) company.
+
+### Design pattern examples
+
+ - Facade pattern
+ - Strategy pattern
+ - Command pattern
+ - Proxy pattern
+
+
