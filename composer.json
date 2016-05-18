@@ -1,0 +1,17 @@
+{
+  "name": "Aion/DP2",
+  "description": "Design pattern 2 samples",
+  "minimum-stability": "stable",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Zoltán Németh",
+      "email": "zoltan.nemeth@aionhill.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DP\\": "vendor/DP"
+    }
+  }
+}
