@@ -31,7 +31,7 @@ class WebServer implements ServerInterface
 
     private function getStartTime($paramteres)
     {
-        return date("Y-m-d H:i:s", $this->startTime);
+        return date('Y-m-d H:i:s', $this->startTime);
     }
 
     private function setStartTime($time)

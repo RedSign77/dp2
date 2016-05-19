@@ -9,6 +9,13 @@
 namespace DP\Command\Model;
 
 
+/**
+ * Interface Order
+ *
+ * Interface of the Command pattern
+ *
+ * @package DP\Command\Model
+ */
 interface Order
 {
     public function execute();
