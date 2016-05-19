@@ -29,13 +29,12 @@ class ProxyServer implements ServerInterface
 
     public function connection($method, $url, $parameters)
     {
-        $request_id = microtime(true);
-        $this->requests[$request_id] = array('METHOD' => $method, 'URL' => $url, 'PARAMETERS' => $parameters, 'RESPONSE' => '');
-        if (!$this->allowed) {
-            $this->requests[$request_id]['RESPONSE'] = 'Public access blocked.';
-            return null;
+        $request_id = time().microtime(true);
+        $response = 'Public access blocked.';
+        if ($this->allowed) {
+            $response = $this->server->connection($method, $url, $parameters);
         }
-        $this->requests[$request_id]['RESPONSE'] =  $this->server->connection($method, $url, $parameters);
+        $this->requests[$request_id] = array('METHOD' => $method, 'URL' => $url, 'PARAMETERS' => $parameters, 'RESPONSE' => $response);
         return $this->requests[$request_id]['RESPONSE'];
     }
 
@@ -45,7 +44,8 @@ class ProxyServer implements ServerInterface
         $ret .= '<br>Allowed: ' . ($this->allowed ? 'true' : 'false');
         $ret .= '<br>List of Requests';
         foreach ($this->requests as $time => $request) {
-            $ret .= '<br> ' . $time . ' <strong>' . $request['METHOD'] . '</strong> ' . $request['URL'] . ' | ' . json_encode($request['PARAMETERS']);
+            $ret .= '<br> > <strong>' . $request['METHOD'] . '</strong> ' . $request['URL'] . ' | ' . json_encode($request['PARAMETERS']);
+            $ret .= '  > '.$request['RESPONSE'];
         }
         return $ret;
     }

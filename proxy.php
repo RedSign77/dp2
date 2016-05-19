@@ -14,9 +14,9 @@ $ws->connection('setStartTime', 'http://www.google.hu', time() - mt_rand(14400, 
 echo '<br>' . get_class($ws) . ' start time: ' . $ws->connection('getStartTime', 'http://www.google.hu', '');
 
 $proxies = array();
-for ($i = 0; $i < 10; $i++) {
+for ($i = 0; $i < 5; $i++) {
     $proxies[$i] = new \DP\Proxy\Model\ProxyServer();
-    for ($j = 0; $j < 10; $j++) {
+    for ($j = 0; $j < 20; $j++) {
         $proxies[$i]->connection('getStartTime', 'http://www.'.$i.'-'.$j.'.com', '');
     }
     echo $proxies[$i];
