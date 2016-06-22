@@ -17,7 +17,7 @@ class ProxyServer implements ServerInterface
 
     public function __construct()
     {
-        $this->server = new WebServer();
+        $this->server = WebServer::getInstance();
         $this->allowed = mt_rand(0, 1);
 
     }

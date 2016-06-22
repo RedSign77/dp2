@@ -9,14 +9,15 @@
 namespace DP\Proxy\Model;
 
 
+use DP\General\Singleton;
 use MongoDB\BSON\Timestamp;
 
-class WebServer implements ServerInterface
+class WebServer extends Singleton implements ServerInterface
 {
 
     private $startTime;
 
-    public function __construct()
+    protected function __construct()
     {
         $this->startTime = time();
     }

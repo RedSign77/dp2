@@ -8,7 +8,7 @@
 
 include __DIR__ . '/vendor/autoload.php';
 
-$ws = new \DP\Proxy\Model\WebServer();
+$ws = \DP\Proxy\Model\WebServer::getInstance();
 echo get_class($ws) . ' created, start time: ' . $ws->connection('getStartTime', 'http://www.google.hu', '');
 $ws->connection('setStartTime', 'http://www.google.hu', time() - mt_rand(14400, 168000));
 echo '<br>' . get_class($ws) . ' start time: ' . $ws->connection('getStartTime', 'http://www.google.hu', '');
