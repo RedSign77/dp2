@@ -2,7 +2,7 @@
 
 ## Overview
 
-This repo is an example for my second Design Pattern workshop on the [AionHill](http://aionhill.com) company.
+This repo is an example for my second Design Pattern workshop on the [AionHill - Magento Development](http://aionhill.com) company.
 
 ### Design pattern examples
 
